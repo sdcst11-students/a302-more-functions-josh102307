@@ -13,8 +13,21 @@ Sample assertions:
 assert btcTocad(1) == 45000
 (2 points) 
 """
+def btcTocad(amount):
+    currBTC = 45000.0
 
-def btcTocad():
+    if isinstance(amount, float):
+      
+        cad_amount = amount * currBTC
+        return cad_amount
+    else:
+        return 'error'
+
+if __name__ == "__main__":
+   
+    assert btcTocad(1) == 45000.0
+    assert btcTocad(2.5) == 112500.0
+    assert btcTocad("one") == 'error'
     pass
 
 
